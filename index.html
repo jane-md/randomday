@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="polaroid-screen" class="center-screen fade">
+  <div class="polaroid">
+    <img src="photo1.jpg" class="polaroid-img">
+    <h2>Do you love me?</h2>
+    <div class="btn-group">
+      <button class="love-btn">Yes</button>
+      <button class="love-btn">Yes</button>
+    </div>
+  </div>
+</section>
+
+<section id="cat-screen" class="center-screen hidden fade">
+  <img src="cat.jpg" class="cat-img">
+</section>
+
+<section id="unlock-screen" class="center-screen hidden fade">
+  <div class="unlock-box">
+    <h3>Enter Password</h3>
+    <input type="password" id="passwordInput" placeholder="••••••">
+    <button id="unlockBtn">Unlock</button>
+    <p id="errorText"></p>
+  </div>
+</section>
+
+<section id="envelope-screen" class="center-screen hidden fade">
+  <div class="envelope" id="envelope">
+    <div class="envelope-body">
+      <div class="fold-left"></div>
+      <div class="fold-right"></div>
+      <div class="inner-shadow"></div>
+    </div>
+    <div class="lid"></div>
+  </div>
+</section>
+
+<section id="letter-screen" class="center-screen hidden">
+  <div class="letter-container">
+    <img id="letterImage" src="page1.jpg" alt="Letter Page">
+    <div class="nav-btns">
+      <button id="prevBtn">Back</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+</section>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
