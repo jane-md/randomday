@@ -1,0 +1,244 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Georgia', serif;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)),
+    url("paper-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:#222;
+}
+
+.center-screen{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.hidden{
+  display:none;
+}
+
+.fade{
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* ---------------- POLAROID ---------------- */
+
+.polaroid{
+  background:#f5f5f5;
+  padding:25px;
+  width:320px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  text-align:center;
+  border-radius:4px;
+}
+
+.polaroid-img{
+  width:100%;
+  margin-bottom:15px;
+}
+
+.polaroid h2{
+  margin-bottom:12px;
+}
+
+.btn-group{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+
+button{
+  background:#222;
+  color:#fff;
+  border:none;
+  padding:8px 22px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+button:hover{
+  background:#444;
+  transform:translateY(-2px);
+}
+
+/* ---------------- CAT ---------------- */
+
+.cat-img{
+  width:300px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* ---------------- UNLOCK ---------------- */
+
+.unlock-box{
+  background:#f5f5f5;
+  padding:35px;
+  width:320px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  text-align:center;
+  border-radius:8px;
+}
+
+input{
+  margin-top:15px;
+  padding:10px;
+  width:200px;
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:5px;
+  outline:none;
+}
+
+input:focus{
+  border:1px solid #888;
+}
+
+#unlockBtn{
+  margin-top:15px;
+  background:#e0e0e0;
+  color:#222;
+}
+
+#unlockBtn:hover{
+  background:#d0d0d0;
+}
+
+#errorText{
+  margin-top:10px;
+  color:#777;
+}
+
+/* ---------------- ENVELOPE ---------------- */
+/* ================= REALISTIC ENVELOPE ================= */
+
+.envelope{
+  position:relative;
+  width:360px;
+  height:230px;
+  cursor:pointer;
+  perspective:1200px;
+}
+
+/* Envelope Body */
+.envelope-body{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:
+    linear-gradient(to bottom, #f5f5f5 0%, #e9e9e9 100%);
+  border:2px solid #2a2a2a;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    inset 0 5px 15px rgba(255,255,255,0.6);
+  z-index:1;
+  overflow:hidden;
+}
+
+/* Fold Lines (Bottom Triangles) */
+.fold-left,
+.fold-right{
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:0;
+  background:linear-gradient(to bottom, #ededed, #dcdcdc);
+}
+
+.fold-left{
+  left:0;
+  clip-path:polygon(0 0, 100% 50%, 0 100%);
+  border-right:1px solid rgba(0,0,0,0.1);
+}
+
+.fold-right{
+  right:0;
+  clip-path:polygon(100% 0, 0 50%, 100% 100%);
+  border-left:1px solid rgba(0,0,0,0.1);
+}
+
+/* Inner Shadow */
+.inner-shadow{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60%;
+  background:linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+  pointer-events:none;
+}
+
+/* Envelope Flap */
+.lid{
+  position:absolute;
+  width:100%;
+  height:120px;
+  background:
+    linear-gradient(to bottom, #f2f2f2 0%, #dddddd 100%);
+  clip-path:polygon(0 0, 100% 0, 50% 100%);
+  top:0;
+  left:0;
+  border-left:2px solid #2a2a2a;
+  border-right:2px solid #2a2a2a;
+  border-top:2px solid #2a2a2a;
+  box-shadow:
+    inset 0 10px 20px rgba(255,255,255,0.5),
+    0 5px 20px rgba(0,0,0,0.3);
+  transform-origin:top;
+  transition:1.4s cubic-bezier(.77,0,.18,1);
+  z-index:3;
+}
+
+/* Dramatic Open */
+.envelope.open .lid{
+  transform:rotateX(-180deg);
+}
+
+/* Subtle hover realism */
+.envelope:hover{
+  transform:translateY(-3px);
+  transition:0.4s ease;
+}
+/* ---------------- LETTER ---------------- */
+
+.letter-container{
+  text-align:center;
+}
+
+
+#letterImage{
+  max-width:90vw;
+  max-height:85vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  box-shadow:0 25px 70px rgba(0,0,0,0.7);
+  margin-bottom:15px;
+  border-radius:3px;
+  transition:opacity 0.4s ease;
+}
+
+.nav-btns{
+  display:flex;
+  justify-content:space-between;
+  width:320px;
+}
+
+/* ---------------- ANIMATION ---------------- */
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
+}
